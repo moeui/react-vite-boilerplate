@@ -1,10 +1,21 @@
 {
   "version": "0.0.0",
+  "description": "Use react/typeScript/vite frame scaffolding",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
+  "keywords": [
+    "vite",
+    "react",
+    "redux",
+    "redux-actions",
+    "react-router",
+    "typescript",
+    "eslint",
+    "prettier"
+  ],
   "dependencies": {
     "antd": "^4.16.9",
     "axios": "^0.21.1",
