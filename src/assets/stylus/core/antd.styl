@@ -1,0 +1,140 @@
+.listTable
+    background: #2D2F35
+    padding: 0 30px 30px
+    border-radius: 12px
+
+    .ant-table-wrapper
+        padding: 0 0 30px
+
+    .ant-table
+        background: #2D2F35
+
+        .ant-table-thead>tr>th
+            background: #2D2F35
+            border-bottom: 1px solid #373A42
+            color: #B7BBC6
+            font-size: 20px
+
+        .ant-table-placeholder
+            &:hover
+                >td
+                    background: none
+
+            >td
+                border: 0 none !important
+
+            .ant-empty-image
+                display: none
+
+            .ant-empty-description
+                font-family: 'Poppins-SemiBold'
+                font-size: 19px
+                color: #D0D9FF
+                text-align: center
+                background: url('../img/noData.png') no-repeat center
+                background-size: auto 42px
+                box-sizing: border-box
+                padding: 90px 0 0
+
+        .ant-table-tbody>tr>td
+            color: #fff
+            border-bottom: 1px solid #373A42
+
+            .btnWrap
+                display: flex
+
+                .btn
+                    padding: 0 15px
+                    height: 36px
+                    line-height: @height
+                    background: #2781FF
+                    border-radius: 12px
+                    cursor pointer
+
+                    &:nth-child(2)
+                        background: #4F525A
+                        margin: 0 0 0 12px
+
+        .ant-table-tbody>tr.ant-table-row:hover>td
+            background: #2D2F35
+            color: #6A6D76
+
+            .btn
+                background: rgba(#2781FF, .6)
+                color: rgba(#fff, .6)
+
+                &:nth-child(2)
+                    background: #4F525A
+
+.poolDropdownBtn
+    height: 44px
+    line-height: @height
+    background: #2781FF
+    border-radius: 12px
+    font-size: 18px
+    padding: 0 25px
+
+    span
+        background: url('../img/iconDown.png') no-repeat right center
+        background-size: 12px 6px
+        padding: 0 20px 0 0
+
+.poolDropdown
+    background: #2D2F35
+    border: 1px solid #2781FF
+    border-radius: 8px
+
+    .ant-dropdown-menu
+        background: #2D2F35
+        border-radius: 8px
+        padding: 0 10px
+
+        .ant-dropdown-menu-item
+            color: #B7BBC6
+            border-top: 1px solid #373A42
+            font-size: 14px
+            text-align: center
+            padding: 10px 0
+
+            &:first-child
+                border: 0 none
+
+        .ant-dropdown-menu-item-active
+            background: #2D2F35
+            color: #fff
+
+.customToolTip
+    .ant-tooltip-inner
+        background: #2D2F35
+        color: #B7BBC6
+        border: 1px solid #2781FF
+        border-radius: 10px
+        padding: 15px
+        font-size: 20px
+
+    .ant-tooltip-arrow
+        size(20px)
+
+        .ant-tooltip-arrow-content
+            background: #2D2F35
+            border: 1px solid #2781FF
+            size(20px)
+
+.customSelectDown
+    background: #1F2127
+    border-radius: 12px
+    padding: 0
+
+    .ant-select-item, .ant-select-item-empty
+        height: 54px
+        line-height: @height
+        padding: 0 20px
+        font-size: 20px
+        color: #B7BBC6
+
+    .ant-select-item-option-active:not(.ant-select-item-option-disabled)
+        background: #2D2F35
+        color: #fff
+
+    .ant-select-item-option-selected
+        background: rgba(#1F2127, 0.8)

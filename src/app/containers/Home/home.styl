@@ -1,0 +1,87 @@
+.page-home
+    .lt-header
+        .text
+            width: 196px
+            height: 79px
+            background: url('./img/headerText.png')
+            background-size: 100% 100%
+            float: left
+
+    .lt-main
+        .btn
+            background: #ddd
+
+        .header
+            height: 20px
+            line-height: @height
+            margin: 0 0 11px
+            clear: both
+
+            .left
+                float: left
+
+            .right
+                float: right
+
+        .list
+            .head
+                background: rgba(#FF7752, 0.1)
+                display: flex
+                height: 26px
+                line-height: @height
+                color: #A9887E
+                font-size: 12px
+
+                .column
+                    flex: 1
+
+                    &.column_0
+                        width: 48px
+
+                    &.column_1
+                        text-align: left
+
+                    &.column_2
+                        text-align: center
+
+                    &.column_3
+                        text-align: center
+
+            .body
+                .item
+                    display: flex
+
+                    .column
+                        flex: 1
+                        padding: 15px 0
+
+                        &.column_0
+                            width: 48px
+
+                        &.column_1
+                            border-bottom: 1px solid #F4F4F4
+
+                        &.column_2
+                            border-bottom: 1px solid #F4F4F4
+                            text-align: center
+
+                        &.column_3
+                            border-bottom: 1px solid #F4F4F4
+                            text-align: center
+
+                    &:last-child
+                        .column
+                            border: 0 none
+                            padding: 15px 0 0
+
+                .ant-skeleton
+                    &:first-child
+                        margin: 15px 0 0
+
+                    .ant-skeleton-avatar
+                        width: 36px
+                        height: @width
+                        line-height: @width
+
+                    .ant-skeleton-paragraph
+                        margin-top: 24px

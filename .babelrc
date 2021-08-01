@@ -1,0 +1,25 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "modules": false // 防止babel将任何模块类型都转译成CommonJS类型，导致tree-shaking失效问题
+            }
+        ],
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "lodash"
+        // "@babel/plugin-transform-runtime",
+        // // TODO: 可以不要？
+        // "@babel/plugin-proposal-class-properties",
+        // "@babel/plugin-proposal-object-rest-spread",
+        // "@babel/plugin-proposal-optional-chaining",
+        // "@babel/plugin-syntax-dynamic-import",
+        // //
+        // ["babel-plugin-import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
+        // ["babel-plugin-import", { "libraryName": "@material-ui/core", "libraryDirectory": "esm"}, "core"],
+        // ["babel-plugin-import", { "libraryName": "@material-ui/icons", "libraryDirectory": "esm"}, "icons"]
+    ]
+}
