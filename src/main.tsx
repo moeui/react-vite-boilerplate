@@ -9,16 +9,19 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
 
+import GlobalProvider from './app/context/global'
 import AppRouter from './app/router'
 import store, { history } from './app/store'
 
 render(
     <ConfigProvider locale={zhCN}>
-        <Provider store={store}>
-            <Router history={history}>
-                <AppRouter />
-            </Router>
-        </Provider>
+        <GlobalProvider>
+            <Provider store={store}>
+                <Router history={history}>
+                    <AppRouter />
+                </Router>
+            </Provider>
+        </GlobalProvider>
     </ConfigProvider>,
     document.getElementById('root')
 )

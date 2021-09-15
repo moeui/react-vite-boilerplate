@@ -16,7 +16,9 @@ import baseAction from '../../actions/baseAction'
 import Header from '../../components/Header'
 import Layout from '../../components/Layout'
 import TradingView from '../../components/TradingView'
+import { GlobalContext } from '../../context/global'
 import { IRootState } from '../../reducers/RootState'
+import EventEmitter from '../../utils/event'
 // import Icon from '@ant-design/icons'
 // import SvgHome from './img/home.svg'
 import homeStyle from './home.module.styl'
@@ -38,7 +40,7 @@ const ChildComp = ({ name, onClick, info }): JSX.Element => {
     return (
         <>
             <div>Child Comp ... {name}</div>
-            <Icon name="close"></Icon>
+            <Icon name="close" />
             <button onClick={() => onClick('hello')}>改变 name 值</button>
         </>
     )
@@ -96,6 +98,7 @@ function Home(props: IProps): JSX.Element {
             ? dayjs(queryDay).format('MM/DD')
             : `${dayjs(dayArr[0]).format('MM/DD')}-${dayjs(dayArr[1]).format('MM/DD')}`
         : ''
+    const { count, setCount, onChangeCount } = useContext(GlobalContext)
 
     const changLng = (l: string): void => {
         i18n.changeLanguage(l)
@@ -109,6 +112,25 @@ function Home(props: IProps): JSX.Element {
             console.log(info)
         }
     }
+
+    const handleAdd = () => {
+        setCount(count + 1)
+    }
+
+    const handleSub = () => {
+        setCount(count - 1)
+    }
+
+    const handleChange = () => {
+        // 调用方法
+        onChangeCount()
+    }
+
+    const changeCount = () => {
+        EventEmitter.emit('setCount', 222)
+    }
+
+    console.log(count)
 
     return (
         <Layout className={classnames('page-home')}>
@@ -125,6 +147,14 @@ function Home(props: IProps): JSX.Element {
                 </Btn>
                 <div onClick={() => changLng('zh_CN')}>中文简体</div>
                 <div onClick={() => changLng('en_US')}>English</div>
+                <br />
+                <button onClick={handleAdd}>+1</button>
+                <br />
+                <button onClick={handleSub}>-1</button>
+                <br />
+                <button onClick={handleChange}>模拟请求修改</button>
+                <button onClick={changeCount}>模拟其他组件调用</button>
+                <br />
                 {t('joinUsText')}
                 {/* <form noValidate autoComplete="off" onSubmit={() => onSubmit()}>
                     <TextField label="用户名" value={name} onChange={handleChange} error={nameError} />
@@ -148,7 +178,7 @@ function Home(props: IProps): JSX.Element {
 
                     <div className="list">
                         <div className="head">
-                            <div className="column column_0"></div>
+                            <div className="column column_0" />
                             <div className="column column_1">达人</div>
                             <div className="column column_2">销量</div>
                             <div className="column column_3">销售额度</div>
