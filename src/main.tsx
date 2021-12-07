@@ -1,6 +1,7 @@
 import 'dayjs/locale/zh-cn'
 import './assets/stylus/index.styl'
 import './app/utils/i18n'
+import 'virtual:svg-icons-register'
 
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'

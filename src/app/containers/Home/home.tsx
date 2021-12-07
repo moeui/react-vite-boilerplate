@@ -33,6 +33,8 @@ const Btn = styled.div<{ primary: boolean; black: boolean }>`
 `
 import './home.styl'
 
+// import Icon from '@/assets/icons'
+
 type IProps = RouteComponentProps
 
 const ChildComp = ({ name, onClick, info }): JSX.Element => {
@@ -40,7 +42,9 @@ const ChildComp = ({ name, onClick, info }): JSX.Element => {
     return (
         <>
             <div>Child Comp ... {name}</div>
-            <Icon name="close" />
+            <div style={{ color: '#000' }}>
+                <Icon name="me" />
+            </div>
             <button onClick={() => onClick('hello')}>改变 name 值</button>
         </>
     )

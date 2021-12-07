@@ -1,3 +1,5 @@
+import alias from '@rollup/plugin-alias'
+import resolve from '@rollup/plugin-node-resolve'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import path from 'path'
 import babel from 'rollup-plugin-babel'
@@ -9,6 +11,9 @@ import viteSvgIcons from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
+        alias({
+            entries: [{ find: '@', replacement: path.resolve(process.cwd(), 'src') }]
+        }),
         babel({ runtimeHelpers: true, exclude: 'node_modules/**' }),
         reactRefresh(),
         visualizer({
@@ -21,7 +26,7 @@ export default defineConfig({
             // Specify the icon folder to be cached
             iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
             // Specify symbolId format
-            symbolId: 'icon-[dir]-[name]'
+            symbolId: '[name]'
         })
         // vitePluginImp({
         //     libList: [
